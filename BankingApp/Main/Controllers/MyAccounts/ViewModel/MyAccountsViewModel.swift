@@ -9,12 +9,8 @@ import Foundation
 
 final class MyAccountsViewModel: AccountViewModelCoordinatorDelegate {
     
-    
-    
-    private var bankAccountService: BankAccountServiceProtocol
-    var currentIndexsCollapsed : [IndexPath] = [IndexPath]()
+    var bankAccountService: BankAccountServiceProtocol
     var reloadTableView: (() -> Void)?
-    
     var bankAccounts = [BankAccount]()
     var CABankAccountsViewModels = [BankAccountCellViewModel]()
     var othersBankAccountsViewModels = [BankAccountCellViewModel]()

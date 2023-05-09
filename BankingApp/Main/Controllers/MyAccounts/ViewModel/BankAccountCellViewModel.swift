@@ -14,7 +14,7 @@ struct BankAccountCellViewModel {
     var bankAccountAmount: String
     var bankAccountModel : BankAccount
     var subAccountsCellViewModels = [SubAccountCellViewModel]()
-    var isCollapsed : Bool = false
+    var isCollapsed : Bool = true
     weak var coordinatorDelegate: AccountViewModelCoordinatorDelegate?
 
     func didTapOnAccount(account:Account)

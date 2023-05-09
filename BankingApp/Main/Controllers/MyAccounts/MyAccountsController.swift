@@ -9,8 +9,7 @@ import UIKit
 
 class MyAccountsController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView?
-    
+    @IBOutlet weak var tableView: InnerAutoTableView?
     lazy var indicatorView: UIActivityIndicatorView = {
       let view = UIActivityIndicatorView(style: .large)
       view.color = .gray
@@ -58,14 +57,7 @@ extension MyAccountsController : UITableViewDelegate,UITableViewDataSource
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if self.viewModel.currentIndexsCollapsed.contains(indexPath)
-        {
-            return 60.0 + (CGFloat(viewModel.getCellViewModel(at: indexPath).subAccountsCellViewModels.count) * 60.0)
-        }
-        else
-        {
-            return 60.0
-        }
+        return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
@@ -78,20 +70,17 @@ extension MyAccountsController : UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BankAccountCell.identifier, for: indexPath) as! BankAccountCell
         var cellViewModel = viewModel.getCellViewModel(at: indexPath)
-        cellViewModel.isCollapsed = self.viewModel.currentIndexsCollapsed.contains(indexPath)
+        cellViewModel.isCollapsed.toggle()
         cell.cellViewModel = cellViewModel
+        cell.navc = self.navigationController
+        cell.tableView?.reloadData()
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if !self.viewModel.currentIndexsCollapsed.contains(indexPath)
-        {
-            self.viewModel.currentIndexsCollapsed.append(indexPath)
-        }
-        else
-        {
-            if let index = self.viewModel.currentIndexsCollapsed.firstIndex(of: indexPath) {
-                self.viewModel.currentIndexsCollapsed.remove(at: index)
-            }
+        if indexPath.section == 0 {
+            self.viewModel.CABankAccountsViewModels[indexPath.row].isCollapsed.toggle()
+        } else {
+            self.viewModel.othersBankAccountsViewModels[indexPath.row].isCollapsed.toggle()
         }
         DispatchQueue.main.async {
             self.tableView?.reloadRows(at: [indexPath], with: .automatic)

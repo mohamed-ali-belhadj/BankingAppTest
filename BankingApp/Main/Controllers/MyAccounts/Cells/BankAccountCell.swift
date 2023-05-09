@@ -32,7 +32,6 @@ class BankAccountCell: UITableViewCell {
                 {
                     self.arrowImageView?.transform = self.arrowImageView?.transform.rotated(by: -.pi) ?? CGAffineTransform.identity
                 }
-                self.tableView?.reloadData()
             }
         }
     }

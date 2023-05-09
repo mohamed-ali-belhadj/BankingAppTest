@@ -9,13 +9,9 @@ import UIKit
 
 class SimulatorController: UIViewController {
 
-    var viewModel: SimulatorViewModel? {
-        willSet {
-        }
-        didSet {
-           
-        }
-    }
+    lazy var viewModel = {
+        SimulatorViewModel()
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

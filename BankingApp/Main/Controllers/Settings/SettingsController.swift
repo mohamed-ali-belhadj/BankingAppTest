@@ -9,13 +9,9 @@ import UIKit
 
 class SettingsController: UIViewController {
 
-    var viewModel: SettingsViewModel? {
-        willSet {
-        }
-        didSet {
-           
-        }
-    }
+    lazy var viewModel = {
+        SettingsViewModel()
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
