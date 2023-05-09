@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SimulatorCoordinator:Coordinator {
+final class SimulatorCoordinator:Coordinator {
     
     func start()->UIViewController{
         let simulatorVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SimulatorController") as! SimulatorController

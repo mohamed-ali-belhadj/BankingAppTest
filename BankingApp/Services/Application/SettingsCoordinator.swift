@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SettingsCoordinator:Coordinator {
+final class SettingsCoordinator:Coordinator {
     
     func start()->UIViewController{
         let settingsVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsController") as! SettingsController

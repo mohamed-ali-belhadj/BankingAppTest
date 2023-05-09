@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ApplicationCoordinator:Coordinator {
+final class ApplicationCoordinator:Coordinator {
     
     let accountCoordinator : AccountCoordinator = AccountCoordinator()
     let simulatorCoordinator : SimulatorCoordinator = SimulatorCoordinator()

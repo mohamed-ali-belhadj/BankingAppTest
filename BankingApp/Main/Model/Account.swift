@@ -17,18 +17,7 @@ struct Account: Codable {
     var order: Int?
     var productCode: String?
     var role: Int?
-
-    init(balance: Double?, contractNumber: String?, holder: String?, id: String?, label: String?, operations: [Operation]?, order: Int?, productCode: String?, role: Int?) {
-        self.balance = balance
-        self.contractNumber = contractNumber
-        self.holder = holder
-        self.id = id
-        self.label = label
-        self.operations = operations
-        self.order = order
-        self.productCode = productCode
-        self.role = role
-    }
+    
     enum CodingKeys: String, CodingKey {
 
         case balance = "balance"

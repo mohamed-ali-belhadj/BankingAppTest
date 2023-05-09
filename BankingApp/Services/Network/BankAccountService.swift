@@ -10,7 +10,7 @@ protocol BankAccountServiceProtocol {
     func getBankAccounts(completion: @escaping (_ success: Bool, _ results: [BankAccount]?, _ error: String?) -> ())
 }
 
-class BankAccountService: BankAccountServiceProtocol {
+final class BankAccountService: BankAccountServiceProtocol {
     func getBankAccounts(completion: @escaping (Bool, [BankAccount]?, String?) -> ()) {
         HttpRequestHelper().GET(url: "https://cdf-test-mobile-default-rtdb.europe-west1.firebasedatabase.app/banks.json", params: ["": ""], httpHeader: .application_json) { success, data in
             if success {

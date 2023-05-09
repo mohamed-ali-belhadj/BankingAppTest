@@ -10,17 +10,17 @@ import UIKit
 
 class InnerAutoTableView: UITableView {
     override var intrinsicContentSize: CGSize {
-        self.layoutIfNeeded()
-        return self.contentSize
+        layoutIfNeeded()
+        return contentSize
     }
     
     override var contentSize: CGSize {
         didSet{
-            self.invalidateIntrinsicContentSize()
+            invalidateIntrinsicContentSize()
         }
     }
     override func reloadData() {
       super.reloadData()
-      self.invalidateIntrinsicContentSize()
+      invalidateIntrinsicContentSize()
     }
 }

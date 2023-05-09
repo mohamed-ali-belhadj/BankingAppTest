@@ -7,59 +7,39 @@
 
 import Foundation
 
-final class MyAccountsViewModel: AccountViewModelCoordinatorDelegate {
+final class MyAccountsViewModel{
     
-    var bankAccountService: BankAccountServiceProtocol
+    var bankAccountService: BankAccountServiceProtocol = BankAccountService()
     var reloadTableView: (() -> Void)?
     var bankAccounts = [BankAccount]()
     var CABankAccountsViewModels = [BankAccountCellViewModel]()
     var othersBankAccountsViewModels = [BankAccountCellViewModel]()
     weak var coordinatorDelegate: AccountViewModelCoordinatorDelegate?
-
-    init(bankAccountService: BankAccountService = BankAccountService()) {
-        self.bankAccountService = bankAccountService
-    }
     
-    func getBankAccounts() {
-        self.bankAccountService.getBankAccounts { success, model, error in
+    func getBankAccounts(completion:@escaping (_ success:Bool,_ error:String?) -> Void) {
+        bankAccountService.getBankAccounts { [weak self] success, model, error in
             if success, let bankAccounts = model {
-                self.fetchData(bankAccounts: bankAccounts)
+                self?.fetchData(bankAccounts: bankAccounts)
+                completion(success,nil)
             } else {
-                print(error!)
+                completion(success,error)
             }
         }
     }
     func fetchData(bankAccounts: [BankAccount]) {
-        self.bankAccounts = bankAccounts // Cache
+        self.bankAccounts = bankAccounts
         for bankAccount in bankAccounts {
             var bankAccountVm = createCellModel(bankAccount: bankAccount)
-            if let accounts = bankAccount.accounts
-            {
-                for account in accounts {
-                    bankAccountVm.subAccountsCellViewModels.append(bankAccountVm.createCellModel(subAccount: account))
-                }
-                bankAccountVm.subAccountsCellViewModels = bankAccountVm.subAccountsCellViewModels .sorted { $0.accountTitle.localizedCaseInsensitiveCompare($1.accountTitle) == .orderedAscending }
-            }
-            if let isCA = bankAccount.isCA
-            {
-                if isCA == 1
-                {
-                    self.CABankAccountsViewModels.append(bankAccountVm)
-                }
-                else
-                {
-                    self.othersBankAccountsViewModels.append(bankAccountVm)
-                }
-            }
-            else
-            {
-                self.othersBankAccountsViewModels.append(bankAccountVm)
+            bankAccount.accounts.flatMap { accounts in
+                bankAccountVm.subAccountsCellViewModels = accounts
+                    .map({ bankAccountVm.createCellModel(subAccount: $0) })
+                    .sorted { $0.accountTitle.localizedCaseInsensitiveCompare($1.accountTitle) == .orderedAscending }
             }
             
+            bankAccount.isCA.flatMap({ $0 == 1 ? self.CABankAccountsViewModels.append(bankAccountVm) : self.othersBankAccountsViewModels.append(bankAccountVm) })
         }
         self.CABankAccountsViewModels = self.CABankAccountsViewModels.sorted { $0.bankAccountTitle.localizedCaseInsensitiveCompare($1.bankAccountTitle) == .orderedAscending }
         self.othersBankAccountsViewModels = self.othersBankAccountsViewModels.sorted { $0.bankAccountTitle.localizedCaseInsensitiveCompare($1.bankAccountTitle) == .orderedAscending }
-
         self.reloadTableView?()
     }
     
@@ -74,16 +54,17 @@ final class MyAccountsViewModel: AccountViewModelCoordinatorDelegate {
     func getCellViewModel(at indexPath: IndexPath) -> BankAccountCellViewModel {
         if indexPath.section == 0
         {
-            return self.CABankAccountsViewModels[indexPath.row]
+            return CABankAccountsViewModels[indexPath.row]
         }
         else
         {
-            return self.othersBankAccountsViewModels[indexPath.row]
+            return othersBankAccountsViewModels[indexPath.row]
         }
     }
-    
+}
+extension MyAccountsViewModel: AccountViewModelCoordinatorDelegate
+{
     func didTapOnAccount(account: Account) {
-        self.coordinatorDelegate?.didTapOnAccount(account: account)
+        coordinatorDelegate?.didTapOnAccount(account: account)
     }
-    
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AccountCoordinator:Coordinator {
+final class AccountCoordinator:Coordinator {
     
     
     var rootViewController: UINavigationController?
@@ -19,8 +19,8 @@ class AccountCoordinator:Coordinator {
         myAccountViewModel.coordinatorDelegate = self
         myAccountsVc.viewModel = myAccountViewModel
         myAccountsVc.tabBarItem = UITabBarItem(title: "Mes comptes", image: UIImage(systemName: "star.fill"), tag: 0)
-        self.rootViewController = UINavigationController(rootViewController: myAccountsVc)
-        return self.rootViewController!
+        rootViewController = UINavigationController(rootViewController: myAccountsVc)
+        return rootViewController!
     }
 }
 extension AccountCoordinator : AccountViewModelCoordinatorDelegate
@@ -28,6 +28,6 @@ extension AccountCoordinator : AccountViewModelCoordinatorDelegate
     func didTapOnAccount(account: Account) {
         let detailCoordinator = AccountDetailsCoordinator(account: account)
         let detailVc = detailCoordinator.start()
-        self.rootViewController?.pushViewController(detailVc, animated: true)
+        rootViewController?.pushViewController(detailVc, animated: true)
     }
 }

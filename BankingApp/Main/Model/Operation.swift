@@ -8,19 +8,12 @@ import Foundation
 
 // MARK: - Operation
 struct Operation: Codable  {
-    var amount: String?
-    var category: String?
-    var date: String?
-    var id: String?
-    var title: String?
-
-    init(amount: String?, category: String?, date: String?, id: String?, title: String?) {
-        self.amount = amount
-        self.category = category
-        self.date = date
-        self.id = id
-        self.title = title
-    }
+    let amount: String?
+    let category: String?
+    let date: String?
+    let id: String?
+    let title: String?
+    
     enum CodingKeys: String, CodingKey {
 
         case amount = "amount"

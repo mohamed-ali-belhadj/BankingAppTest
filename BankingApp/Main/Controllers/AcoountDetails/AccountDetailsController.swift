@@ -9,28 +9,36 @@ import UIKit
 
 class AccountDetailsController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView?
-    @IBOutlet weak var subAccountTitleLabel: UILabel?
-    @IBOutlet weak var subAccountAmountLabel: UILabel?
-    var viewModel: AccountDetailsViewModel?
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var subAccountTitleLabel: UILabel!
+    @IBOutlet var subAccountAmountLabel: UILabel!
+    var viewModel : AccountDetailsViewModel = AccountDetailsViewModel(account: Account())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.tableView?.register(OperationCell.nib, forCellReuseIdentifier: OperationCell.identifier)
-        if let account = self.viewModel?.account
+        setupUI()
+        fillData()
+    }
+    private func setupUI()
+    {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        tableView.register(OperationCell.nib, forCellReuseIdentifier: OperationCell.identifier)
+    }
+    private func fillData()
+    {
+        if let account = viewModel.accountModel
         {
             if let accountTitle = account.label
             {
-                self.subAccountTitleLabel?.text = accountTitle
+                subAccountTitleLabel.text = accountTitle
             }
             if let accountAmount = account.balance
             {
-                self.subAccountAmountLabel?.text = String(format: "%.2f €", accountAmount)
+                subAccountAmountLabel.text = String(format: "%.2f €", accountAmount)
             }
-            self.viewModel?.fetchOperations()
-            self.tableView?.reloadData()
+            viewModel.fetchOperations()
+            tableView.reloadData()
         }
     }
 }
@@ -40,14 +48,14 @@ extension AccountDetailsController : UITableViewDelegate,UITableViewDataSource
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel?.operationsCellViewModels.count ?? 0
+        return viewModel.operationsCellViewModels.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: OperationCell.identifier, for: indexPath) as! OperationCell
-        let cellViewModel = self.viewModel?.getCellViewModel(at: indexPath)
+        let cellViewModel = viewModel.getCellViewModel(at: indexPath)
         cell.cellViewModel = cellViewModel
         return cell
     }

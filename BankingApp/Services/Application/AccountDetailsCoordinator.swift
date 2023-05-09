@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AccountDetailsCoordinator:Coordinator {
+final class AccountDetailsCoordinator:Coordinator {
     
     private var account: Account?
 
@@ -17,7 +17,7 @@ class AccountDetailsCoordinator:Coordinator {
     }
     func start()->UIViewController{
         let accountDetailsVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AccountDetailsController") as! AccountDetailsController
-        let accountDetailsViewModel = AccountDetailsViewModel(account: self.account)
+        let accountDetailsViewModel = AccountDetailsViewModel(account: account)
         accountDetailsVc.viewModel = accountDetailsViewModel
         return accountDetailsVc
     }

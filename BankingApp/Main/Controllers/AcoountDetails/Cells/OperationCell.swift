@@ -9,9 +9,9 @@ import UIKit
 
 class OperationCell: UITableViewCell {
 
-    @IBOutlet weak var operationTitleLabel: UILabel?
-    @IBOutlet weak var operationDateLabel: UILabel?
-    @IBOutlet weak var operationAmountLabel: UILabel?
+    @IBOutlet var operationTitleLabel: UILabel!
+    @IBOutlet var operationDateLabel: UILabel!
+    @IBOutlet var operationAmountLabel: UILabel!
     static var identifier: String { return String(describing: self) }
     static var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
     override func awakeFromNib() {
@@ -20,9 +20,9 @@ class OperationCell: UITableViewCell {
     }
     var cellViewModel: OperationCellViewModel? {
         didSet {
-            self.operationTitleLabel?.text = self.cellViewModel?.operationTitle
-            self.operationAmountLabel?.text = self.cellViewModel?.operationAmount
-            self.operationDateLabel?.text = self.cellViewModel?.operationDateString
+            operationTitleLabel.text = cellViewModel?.operationTitle
+            operationAmountLabel.text = cellViewModel?.operationAmount
+            operationDateLabel.text = cellViewModel?.operationDateString
         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

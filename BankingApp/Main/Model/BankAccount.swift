@@ -8,15 +8,10 @@ import Foundation
 
 // MARK: - BankAccount
 struct BankAccount:Codable {
-    var accounts: [Account]?
-    var isCA: Int?
-    var name: String?
+    let accounts: [Account]?
+    let isCA: Int?
+    let name: String?
 
-    init(accounts: [Account]?, isCA: Int?, name: String?) {
-        self.accounts = accounts
-        self.isCA = isCA
-        self.name = name
-    }
     enum CodingKeys: String, CodingKey {
 
         case accounts = "accounts"

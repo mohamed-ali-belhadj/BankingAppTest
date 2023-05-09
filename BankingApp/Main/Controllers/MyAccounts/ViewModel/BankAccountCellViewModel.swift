@@ -17,17 +17,16 @@ struct BankAccountCellViewModel {
     var isCollapsed : Bool = true
     weak var coordinatorDelegate: AccountViewModelCoordinatorDelegate?
 
-    func didTapOnAccount(account:Account)
-    {
-        self.coordinatorDelegate?.didTapOnAccount(account: account)
-    }
     func createCellModel(subAccount: Account) -> SubAccountCellViewModel {
         let accountTitle = subAccount.label ?? ""
         let accountAmount = String(format: "%.2f €", subAccount.balance ?? 0.0)
         return SubAccountCellViewModel(accountTitle: accountTitle, accountAmount: accountAmount,accountModel: subAccount)
     }
-    
     func getCellViewModel(at indexPath: IndexPath) -> SubAccountCellViewModel {
-        return self.subAccountsCellViewModels[indexPath.row]
+        return subAccountsCellViewModels[indexPath.row]
+    }
+    func didTapOnAccount(account:Account)
+    {
+        coordinatorDelegate?.didTapOnAccount(account: account)
     }
 }

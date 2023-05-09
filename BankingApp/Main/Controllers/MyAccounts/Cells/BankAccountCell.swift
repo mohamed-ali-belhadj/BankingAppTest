@@ -9,37 +9,36 @@ import UIKit
 
 class BankAccountCell: UITableViewCell {
 
-    @IBOutlet weak var accountTitleLabel: UILabel?
-    @IBOutlet weak var accountAmountLabel: UILabel?
-    @IBOutlet weak var arrowImageView: UIImageView?
-    @IBOutlet weak var tableView: InnerAutoTableView?
+    @IBOutlet  var accountTitleLabel: UILabel!
+    @IBOutlet  var accountAmountLabel: UILabel!
+    @IBOutlet  var arrowImageView: UIImageView!
+    @IBOutlet  var tableView: InnerAutoTableView!
     static var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
     static var identifier: String { return String(describing: self) }
-    var navc : UINavigationController?
     var bankAccount : BankAccount?
     var cellViewModel: BankAccountCellViewModel? {
         didSet {
-            self.accountTitleLabel?.text = self.cellViewModel?.bankAccountTitle
-            self.accountAmountLabel?.text = self.cellViewModel?.bankAccountAmount
-            
-            DispatchQueue.main.async {
-                self.arrowImageView?.transform = CGAffineTransform.identity
-                if self.cellViewModel?.isCollapsed == true
+            accountTitleLabel.text = cellViewModel?.bankAccountTitle
+            accountAmountLabel.text = cellViewModel?.bankAccountAmount
+                arrowImageView.transform = CGAffineTransform.identity
+            if cellViewModel?.isCollapsed == true
                 {
-                    self.arrowImageView?.transform = self.arrowImageView?.transform.rotated(by: .pi * 2) ?? CGAffineTransform.identity
+                    arrowImageView.transform = arrowImageView.transform.rotated(by: .pi * 2)
                 }
                 else
                 {
-                    self.arrowImageView?.transform = self.arrowImageView?.transform.rotated(by: -.pi) ?? CGAffineTransform.identity
+                    arrowImageView.transform = arrowImageView.transform.rotated(by: -.pi)
                 }
-            }
         }
+    }
+    private func setupUI()
+    {
+        tableView?.register(SubAccountCell.nib, forCellReuseIdentifier: SubAccountCell.identifier)
+        tableView?.isScrollEnabled = false
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.tableView?.register(SubAccountCell.nib, forCellReuseIdentifier: SubAccountCell.identifier)
-        self.tableView?.isScrollEnabled = false
-        // Initialization code
+        setupUI()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -53,7 +52,7 @@ extension BankAccountCell : UITableViewDelegate,UITableViewDataSource
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numRows = (self.cellViewModel?.isCollapsed == true) ? self.cellViewModel?.subAccountsCellViewModels.count : 0
+        let numRows = (cellViewModel?.isCollapsed == true) ? cellViewModel?.subAccountsCellViewModels.count : 0
         return numRows ?? 0
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -61,13 +60,12 @@ extension BankAccountCell : UITableViewDelegate,UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SubAccountCell.identifier, for: indexPath) as! SubAccountCell
-        let cellViewModel = self.cellViewModel?.getCellViewModel(at: indexPath)
+        let cellViewModel = cellViewModel?.getCellViewModel(at: indexPath)
         cell.cellViewModel = cellViewModel
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellViewModel = self.cellViewModel?.getCellViewModel(at: indexPath)
-        self.cellViewModel?.didTapOnAccount(account: cellViewModel!.accountModel)
+        cellViewModel?.didTapOnAccount(account: (cellViewModel?.getCellViewModel(at: indexPath).accountModel)!)
     }
 }
 

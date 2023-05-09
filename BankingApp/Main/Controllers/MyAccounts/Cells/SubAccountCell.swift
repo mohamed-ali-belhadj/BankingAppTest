@@ -20,8 +20,8 @@ class SubAccountCell: UITableViewCell {
     }
     var cellViewModel: SubAccountCellViewModel? {
         didSet {
-            self.subAccountTitleLabel?.text = cellViewModel?.accountTitle
-            self.subAccountAmountLabel?.text = cellViewModel?.accountAmount
+            subAccountTitleLabel?.text = cellViewModel?.accountTitle
+            subAccountAmountLabel?.text = cellViewModel?.accountAmount
         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
