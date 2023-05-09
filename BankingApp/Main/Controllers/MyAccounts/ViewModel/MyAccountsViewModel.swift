@@ -7,7 +7,9 @@
 
 import Foundation
 
-final class MyAccountsViewModel {
+final class MyAccountsViewModel: AccountViewModelCoordinatorDelegate {
+    
+    
     
     private var bankAccountService: BankAccountServiceProtocol
     var currentIndexsCollapsed : [IndexPath] = [IndexPath]()
@@ -16,6 +18,7 @@ final class MyAccountsViewModel {
     var bankAccounts = [BankAccount]()
     var CABankAccountsViewModels = [BankAccountCellViewModel]()
     var othersBankAccountsViewModels = [BankAccountCellViewModel]()
+    weak var coordinatorDelegate: AccountViewModelCoordinatorDelegate?
 
     init(bankAccountService: BankAccountService = BankAccountService()) {
         self.bankAccountService = bankAccountService
@@ -67,7 +70,9 @@ final class MyAccountsViewModel {
     func createCellModel(bankAccount: BankAccount) -> BankAccountCellViewModel {
         let bankAccountTitle = bankAccount.name
         let sumAmount : Double = bankAccount.accounts?.compactMap({$0.balance}).reduce(0.0, +) ?? 0.0
-        return BankAccountCellViewModel(bankAccountTitle:bankAccountTitle ?? "" , bankAccountAmount: String(format: "%.2f €", sumAmount), bankAccountModel: bankAccount)
+        var cellViewModel = BankAccountCellViewModel(bankAccountTitle:bankAccountTitle ?? "" , bankAccountAmount: String(format: "%.2f €", sumAmount), bankAccountModel: bankAccount)
+        cellViewModel.coordinatorDelegate = self
+        return cellViewModel
     }
     
     func getCellViewModel(at indexPath: IndexPath) -> BankAccountCellViewModel {
@@ -81,5 +86,8 @@ final class MyAccountsViewModel {
         }
     }
     
+    func didTapOnAccount(account: Account) {
+        self.coordinatorDelegate?.didTapOnAccount(account: account)
+    }
     
 }

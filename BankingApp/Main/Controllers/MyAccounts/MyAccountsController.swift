@@ -9,7 +9,8 @@ import UIKit
 
 class MyAccountsController: UIViewController {
 
-    @IBOutlet weak var tableView: InnerAutoTableView?
+    @IBOutlet weak var tableView: UITableView?
+    
     lazy var indicatorView: UIActivityIndicatorView = {
       let view = UIActivityIndicatorView(style: .large)
       view.color = .gray
@@ -79,7 +80,6 @@ extension MyAccountsController : UITableViewDelegate,UITableViewDataSource
         var cellViewModel = viewModel.getCellViewModel(at: indexPath)
         cellViewModel.isCollapsed = self.viewModel.currentIndexsCollapsed.contains(indexPath)
         cell.cellViewModel = cellViewModel
-        cell.navc = self.navigationController
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

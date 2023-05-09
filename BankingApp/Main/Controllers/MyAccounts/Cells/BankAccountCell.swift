@@ -68,8 +68,7 @@ extension BankAccountCell : UITableViewDelegate,UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = self.cellViewModel?.getCellViewModel(at: indexPath)
-        let accountCoordinator = AccountCoordinator(account: cellViewModel?.accountModel , navc: self.navc)
-        accountCoordinator.start()
+        self.cellViewModel?.didTapOnAccount(account: cellViewModel!.accountModel)
     }
 }
 

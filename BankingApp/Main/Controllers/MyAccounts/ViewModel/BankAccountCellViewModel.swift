@@ -6,15 +6,21 @@
 //
 
 import Foundation
+protocol AccountViewModelCoordinatorDelegate : AnyObject{
+    func didTapOnAccount(account: Account)
+}
 struct BankAccountCellViewModel {
     var bankAccountTitle: String
     var bankAccountAmount: String
     var bankAccountModel : BankAccount
     var subAccountsCellViewModels = [SubAccountCellViewModel]()
-    var reloadTableView: (() -> Void)?
-
     var isCollapsed : Bool = false
-    
+    weak var coordinatorDelegate: AccountViewModelCoordinatorDelegate?
+
+    func didTapOnAccount(account:Account)
+    {
+        self.coordinatorDelegate?.didTapOnAccount(account: account)
+    }
     func createCellModel(subAccount: Account) -> SubAccountCellViewModel {
         let accountTitle = subAccount.label ?? ""
         let accountAmount = String(format: "%.2f €", subAccount.balance ?? 0.0)

@@ -9,20 +9,25 @@ import Foundation
 import UIKit
 
 class AccountCoordinator:Coordinator {
-        
-    private var account: Account?
-    private var navc: UINavigationController?
-
-    init(account : Account?,navc:UINavigationController?) {
-        self.account = account
-        self.navc = navc
+    
+    
+    var rootViewController: UINavigationController?
+    
+    func start()->UIViewController{
+        let myAccountsVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyAccountsController") as! MyAccountsController
+        let myAccountViewModel = MyAccountsViewModel()
+        myAccountViewModel.coordinatorDelegate = self
+        myAccountsVc.viewModel = myAccountViewModel
+        myAccountsVc.tabBarItem = UITabBarItem(title: "Mes comptes", image: UIImage(systemName: "star.fill"), tag: 0)
+        self.rootViewController = UINavigationController(rootViewController: myAccountsVc)
+        return self.rootViewController!
     }
-    // MARK: - Public
-    func start() {
-        if let accountDetailsVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AccountDetailsController") as? AccountDetailsController {
-            let accountDetailsViewModel = AccountDetailsViewModel(account: self.account)
-            accountDetailsVc.viewModel = accountDetailsViewModel
-            self.navc?.pushViewController(accountDetailsVc, animated: true)
-        }
+}
+extension AccountCoordinator : AccountViewModelCoordinatorDelegate
+{
+    func didTapOnAccount(account: Account) {
+        let detailCoordinator = AccountDetailsCoordinator(account: account)
+        let detailVc = detailCoordinator.start()
+        self.rootViewController?.pushViewController(detailVc, animated: true)
     }
 }
