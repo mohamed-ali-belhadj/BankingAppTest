@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB4DB2912A095A3F00181E59 /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4DB2902A095A3F00181E59 /* AccountCoordinator.swift */; };
+		AB4DB2932A09657200181E59 /* OperationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4DB2922A09657200181E59 /* OperationCellViewModel.swift */; };
+		AB4DB2942A09657200181E59 /* OperationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4DB2922A09657200181E59 /* OperationCellViewModel.swift */; };
+		AB4DB2952A09657200181E59 /* OperationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4DB2922A09657200181E59 /* OperationCellViewModel.swift */; };
 		AB6D53612A081C9F004737A5 /* BankingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53602A081C9F004737A5 /* BankingAppTests.swift */; };
 		AB6D536B2A081C9F004737A5 /* BankingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D536A2A081C9F004737A5 /* BankingAppUITests.swift */; };
 		AB6D536D2A081C9F004737A5 /* BankingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D536C2A081C9F004737A5 /* BankingAppUITestsLaunchTests.swift */; };
@@ -37,9 +41,6 @@
 		AB6D53B82A0823D0004737A5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53A82A0823D0004737A5 /* SettingsViewModel.swift */; };
 		AB6D53B92A0823D0004737A5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53A82A0823D0004737A5 /* SettingsViewModel.swift */; };
 		AB6D53BA2A0823D0004737A5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53A82A0823D0004737A5 /* SettingsViewModel.swift */; };
-		AB6D53BB2A0823D0004737A5 /* MyAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53AA2A0823D0004737A5 /* MyAccountViewModel.swift */; };
-		AB6D53BC2A0823D0004737A5 /* MyAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53AA2A0823D0004737A5 /* MyAccountViewModel.swift */; };
-		AB6D53BD2A0823D0004737A5 /* MyAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53AA2A0823D0004737A5 /* MyAccountViewModel.swift */; };
 		AB6D53BE2A0823D0004737A5 /* MyAccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53AB2A0823D0004737A5 /* MyAccountsController.swift */; };
 		AB6D53BF2A0823D0004737A5 /* MyAccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53AB2A0823D0004737A5 /* MyAccountsController.swift */; };
 		AB6D53C02A0823D0004737A5 /* MyAccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53AB2A0823D0004737A5 /* MyAccountsController.swift */; };
@@ -49,6 +50,54 @@
 		AB6D53C42A0823D0004737A5 /* SimulatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53AE2A0823D0004737A5 /* SimulatorController.swift */; };
 		AB6D53C52A0823D0004737A5 /* SimulatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53AE2A0823D0004737A5 /* SimulatorController.swift */; };
 		AB6D53C62A0823D0004737A5 /* SimulatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53AE2A0823D0004737A5 /* SimulatorController.swift */; };
+		ABA376ED2A08FE6100A04185 /* BankAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA376EB2A08FE6100A04185 /* BankAccountCell.swift */; };
+		ABA376EE2A08FE6100A04185 /* BankAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA376EB2A08FE6100A04185 /* BankAccountCell.swift */; };
+		ABA376EF2A08FE6100A04185 /* BankAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA376EB2A08FE6100A04185 /* BankAccountCell.swift */; };
+		ABA376F02A08FE6100A04185 /* BankAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA376EC2A08FE6100A04185 /* BankAccountCell.xib */; };
+		ABA376F12A08FE6100A04185 /* BankAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA376EC2A08FE6100A04185 /* BankAccountCell.xib */; };
+		ABA376F22A08FE6100A04185 /* BankAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA376EC2A08FE6100A04185 /* BankAccountCell.xib */; };
+		ABA376F52A08FE7200A04185 /* SubAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA376F32A08FE7200A04185 /* SubAccountCell.swift */; };
+		ABA376F62A08FE7200A04185 /* SubAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA376F32A08FE7200A04185 /* SubAccountCell.swift */; };
+		ABA376F72A08FE7200A04185 /* SubAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA376F32A08FE7200A04185 /* SubAccountCell.swift */; };
+		ABA376F82A08FE7200A04185 /* SubAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA376F42A08FE7200A04185 /* SubAccountCell.xib */; };
+		ABA376F92A08FE7200A04185 /* SubAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA376F42A08FE7200A04185 /* SubAccountCell.xib */; };
+		ABA376FA2A08FE7200A04185 /* SubAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA376F42A08FE7200A04185 /* SubAccountCell.xib */; };
+		ABA376FE2A09071C00A04185 /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA376FC2A09071C00A04185 /* OperationCell.swift */; };
+		ABA376FF2A09071C00A04185 /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA376FC2A09071C00A04185 /* OperationCell.swift */; };
+		ABA377002A09071C00A04185 /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA376FC2A09071C00A04185 /* OperationCell.swift */; };
+		ABA377012A09071C00A04185 /* OperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA376FD2A09071C00A04185 /* OperationCell.xib */; };
+		ABA377022A09071C00A04185 /* OperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA376FD2A09071C00A04185 /* OperationCell.xib */; };
+		ABA377032A09071C00A04185 /* OperationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA376FD2A09071C00A04185 /* OperationCell.xib */; };
+		ABA377072A0913BD00A04185 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377042A0913BC00A04185 /* Operation.swift */; };
+		ABA377082A0913BD00A04185 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377042A0913BC00A04185 /* Operation.swift */; };
+		ABA377092A0913BD00A04185 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377042A0913BC00A04185 /* Operation.swift */; };
+		ABA3770A2A0913BD00A04185 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377052A0913BC00A04185 /* BankAccount.swift */; };
+		ABA3770B2A0913BD00A04185 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377052A0913BC00A04185 /* BankAccount.swift */; };
+		ABA3770C2A0913BD00A04185 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377052A0913BC00A04185 /* BankAccount.swift */; };
+		ABA3770D2A0913BD00A04185 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377062A0913BC00A04185 /* Account.swift */; };
+		ABA3770E2A0913BD00A04185 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377062A0913BC00A04185 /* Account.swift */; };
+		ABA3770F2A0913BD00A04185 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377062A0913BC00A04185 /* Account.swift */; };
+		ABA377112A0916DA00A04185 /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377102A0916DA00A04185 /* HttpRequestHelper.swift */; };
+		ABA377122A0916DA00A04185 /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377102A0916DA00A04185 /* HttpRequestHelper.swift */; };
+		ABA377132A0916DA00A04185 /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377102A0916DA00A04185 /* HttpRequestHelper.swift */; };
+		ABA377152A09172200A04185 /* BankAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377142A09172200A04185 /* BankAccountService.swift */; };
+		ABA377162A09172200A04185 /* BankAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377142A09172200A04185 /* BankAccountService.swift */; };
+		ABA377172A09172200A04185 /* BankAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377142A09172200A04185 /* BankAccountService.swift */; };
+		ABA3771A2A091B3900A04185 /* MyAccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377192A091B3900A04185 /* MyAccountsViewModel.swift */; };
+		ABA3771B2A091B3900A04185 /* MyAccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377192A091B3900A04185 /* MyAccountsViewModel.swift */; };
+		ABA3771C2A091B3900A04185 /* MyAccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377192A091B3900A04185 /* MyAccountsViewModel.swift */; };
+		ABA3771E2A091B6E00A04185 /* BankAccountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA3771D2A091B6E00A04185 /* BankAccountCellViewModel.swift */; };
+		ABA3771F2A091B6E00A04185 /* BankAccountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA3771D2A091B6E00A04185 /* BankAccountCellViewModel.swift */; };
+		ABA377202A091B6E00A04185 /* BankAccountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA3771D2A091B6E00A04185 /* BankAccountCellViewModel.swift */; };
+		ABA377222A091B7E00A04185 /* SubAccountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377212A091B7E00A04185 /* SubAccountCellViewModel.swift */; };
+		ABA377232A091B7E00A04185 /* SubAccountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377212A091B7E00A04185 /* SubAccountCellViewModel.swift */; };
+		ABA377242A091B7E00A04185 /* SubAccountCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA377212A091B7E00A04185 /* SubAccountCellViewModel.swift */; };
+		ABAF0B362A084B4800019533 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF0B352A084B4800019533 /* ApplicationCoordinator.swift */; };
+		ABAF0B372A084B4800019533 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF0B352A084B4800019533 /* ApplicationCoordinator.swift */; };
+		ABAF0B382A084B4800019533 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF0B352A084B4800019533 /* ApplicationCoordinator.swift */; };
+		ABAF0B3A2A084D7100019533 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF0B392A084D7100019533 /* Coordinator.swift */; };
+		ABAF0B3B2A084D7100019533 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF0B392A084D7100019533 /* Coordinator.swift */; };
+		ABAF0B3C2A084D7100019533 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAF0B392A084D7100019533 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +118,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB4DB2902A095A3F00181E59 /* AccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
+		AB4DB2922A09657200181E59 /* OperationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCellViewModel.swift; sourceTree = "<group>"; };
 		AB6D53462A081C9C004737A5 /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6D53572A081C9F004737A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB6D535C2A081C9F004737A5 /* BankingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,10 +136,25 @@
 		AB6D53A52A0823D0004737A5 /* AccountDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModel.swift; sourceTree = "<group>"; };
 		AB6D53A72A0823D0004737A5 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		AB6D53A82A0823D0004737A5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		AB6D53AA2A0823D0004737A5 /* MyAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountViewModel.swift; sourceTree = "<group>"; };
 		AB6D53AB2A0823D0004737A5 /* MyAccountsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountsController.swift; sourceTree = "<group>"; };
 		AB6D53AD2A0823D0004737A5 /* SimulatorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorViewModel.swift; sourceTree = "<group>"; };
 		AB6D53AE2A0823D0004737A5 /* SimulatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorController.swift; sourceTree = "<group>"; };
+		ABA376EB2A08FE6100A04185 /* BankAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountCell.swift; sourceTree = "<group>"; };
+		ABA376EC2A08FE6100A04185 /* BankAccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankAccountCell.xib; sourceTree = "<group>"; };
+		ABA376F32A08FE7200A04185 /* SubAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAccountCell.swift; sourceTree = "<group>"; };
+		ABA376F42A08FE7200A04185 /* SubAccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubAccountCell.xib; sourceTree = "<group>"; };
+		ABA376FC2A09071C00A04185 /* OperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCell.swift; sourceTree = "<group>"; };
+		ABA376FD2A09071C00A04185 /* OperationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationCell.xib; sourceTree = "<group>"; };
+		ABA377042A0913BC00A04185 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		ABA377052A0913BC00A04185 /* BankAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
+		ABA377062A0913BC00A04185 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		ABA377102A0916DA00A04185 /* HttpRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestHelper.swift; sourceTree = "<group>"; };
+		ABA377142A09172200A04185 /* BankAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountService.swift; sourceTree = "<group>"; };
+		ABA377192A091B3900A04185 /* MyAccountsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAccountsViewModel.swift; sourceTree = "<group>"; };
+		ABA3771D2A091B6E00A04185 /* BankAccountCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountCellViewModel.swift; sourceTree = "<group>"; };
+		ABA377212A091B7E00A04185 /* SubAccountCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubAccountCellViewModel.swift; sourceTree = "<group>"; };
+		ABAF0B352A084B4800019533 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		ABAF0B392A084D7100019533 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +182,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB4C7B062A086AC400E18A06 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ABA377102A0916DA00A04185 /* HttpRequestHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		AB6D533D2A081C9C004737A5 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +213,7 @@
 		AB6D53482A081C9C004737A5 /* BankingApp */ = {
 			isa = PBXGroup;
 			children = (
+				AB4C7B062A086AC400E18A06 /* Utilities */,
 				AB6D53842A08213B004737A5 /* Main */,
 				AB6D537C2A08213B004737A5 /* Ressources */,
 				AB6D53792A08213B004737A5 /* Services */,
@@ -176,6 +251,7 @@
 		AB6D537A2A08213B004737A5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				ABA377142A09172200A04185 /* BankAccountService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -183,6 +259,9 @@
 		AB6D537B2A08213B004737A5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				ABAF0B352A084B4800019533 /* ApplicationCoordinator.swift */,
+				AB4DB2902A095A3F00181E59 /* AccountCoordinator.swift */,
+				ABAF0B392A084D7100019533 /* Coordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -211,6 +290,9 @@
 		AB6D53852A08213B004737A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ABA377052A0913BC00A04185 /* BankAccount.swift */,
+				ABA377062A0913BC00A04185 /* Account.swift */,
+				ABA377042A0913BC00A04185 /* Operation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,8 +311,9 @@
 		AB6D53A32A0823D0004737A5 /* AcoountDetails */ = {
 			isa = PBXGroup;
 			children = (
-				AB6D53A42A0823D0004737A5 /* AccountDetailsController.swift */,
 				AB6D53A52A0823D0004737A5 /* AccountDetailsViewModel.swift */,
+				AB6D53A42A0823D0004737A5 /* AccountDetailsController.swift */,
+				ABA376FB2A09056D00A04185 /* Cells */,
 			);
 			path = AcoountDetails;
 			sourceTree = "<group>";
@@ -238,8 +321,8 @@
 		AB6D53A62A0823D0004737A5 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				AB6D53A72A0823D0004737A5 /* SettingsController.swift */,
 				AB6D53A82A0823D0004737A5 /* SettingsViewModel.swift */,
+				AB6D53A72A0823D0004737A5 /* SettingsController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -247,7 +330,8 @@
 		AB6D53A92A0823D0004737A5 /* MyAccounts */ = {
 			isa = PBXGroup;
 			children = (
-				AB6D53AA2A0823D0004737A5 /* MyAccountViewModel.swift */,
+				ABA376EA2A08FE4A00A04185 /* Cells */,
+				ABA377182A091B3900A04185 /* ViewModel */,
 				AB6D53AB2A0823D0004737A5 /* MyAccountsController.swift */,
 			);
 			path = MyAccounts;
@@ -260,6 +344,37 @@
 				AB6D53AE2A0823D0004737A5 /* SimulatorController.swift */,
 			);
 			path = Simulator;
+			sourceTree = "<group>";
+		};
+		ABA376EA2A08FE4A00A04185 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ABA376EB2A08FE6100A04185 /* BankAccountCell.swift */,
+				ABA376EC2A08FE6100A04185 /* BankAccountCell.xib */,
+				ABA376F32A08FE7200A04185 /* SubAccountCell.swift */,
+				ABA376F42A08FE7200A04185 /* SubAccountCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ABA376FB2A09056D00A04185 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ABA376FC2A09071C00A04185 /* OperationCell.swift */,
+				ABA376FD2A09071C00A04185 /* OperationCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ABA377182A091B3900A04185 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ABA377192A091B3900A04185 /* MyAccountsViewModel.swift */,
+				ABA3771D2A091B6E00A04185 /* BankAccountCellViewModel.swift */,
+				ABA377212A091B7E00A04185 /* SubAccountCellViewModel.swift */,
+				AB4DB2922A09657200181E59 /* OperationCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,8 +482,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB6D53922A08213C004737A5 /* Main.storyboard in Resources */,
+				ABA376F02A08FE6100A04185 /* BankAccountCell.xib in Resources */,
 				AB6D538C2A08213C004737A5 /* Assets.xcassets in Resources */,
+				ABA376F82A08FE7200A04185 /* SubAccountCell.xib in Resources */,
 				AB6D538F2A08213C004737A5 /* LaunchScreen.storyboard in Resources */,
+				ABA377012A09071C00A04185 /* OperationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +495,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB6D53932A08213C004737A5 /* Main.storyboard in Resources */,
+				ABA376F12A08FE6100A04185 /* BankAccountCell.xib in Resources */,
 				AB6D538D2A08213C004737A5 /* Assets.xcassets in Resources */,
+				ABA376F92A08FE7200A04185 /* SubAccountCell.xib in Resources */,
 				AB6D53902A08213C004737A5 /* LaunchScreen.storyboard in Resources */,
+				ABA377022A09071C00A04185 /* OperationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,8 +508,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB6D53942A08213C004737A5 /* Main.storyboard in Resources */,
+				ABA376F22A08FE6100A04185 /* BankAccountCell.xib in Resources */,
 				AB6D538E2A08213C004737A5 /* Assets.xcassets in Resources */,
+				ABA376FA2A08FE7200A04185 /* SubAccountCell.xib in Resources */,
 				AB6D53912A08213C004737A5 /* LaunchScreen.storyboard in Resources */,
+				ABA377032A09071C00A04185 /* OperationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,16 +523,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA376FE2A09071C00A04185 /* OperationCell.swift in Sources */,
 				AB6D53952A08213C004737A5 /* AppDelegate.swift in Sources */,
-				AB6D53BB2A0823D0004737A5 /* MyAccountViewModel.swift in Sources */,
 				AB6D53B52A0823D0004737A5 /* SettingsController.swift in Sources */,
 				AB6D53982A08213C004737A5 /* SceneDelegate.swift in Sources */,
+				ABA3770D2A0913BD00A04185 /* Account.swift in Sources */,
+				ABA376F52A08FE7200A04185 /* SubAccountCell.swift in Sources */,
 				AB6D53C42A0823D0004737A5 /* SimulatorController.swift in Sources */,
 				AB6D53AF2A0823D0004737A5 /* AccountDetailsController.swift in Sources */,
 				AB6D53B22A0823D0004737A5 /* AccountDetailsViewModel.swift in Sources */,
+				AB4DB2932A09657200181E59 /* OperationCellViewModel.swift in Sources */,
+				ABA3770A2A0913BD00A04185 /* BankAccount.swift in Sources */,
 				AB6D53B82A0823D0004737A5 /* SettingsViewModel.swift in Sources */,
+				ABA376ED2A08FE6100A04185 /* BankAccountCell.swift in Sources */,
+				ABA3771A2A091B3900A04185 /* MyAccountsViewModel.swift in Sources */,
+				ABA377152A09172200A04185 /* BankAccountService.swift in Sources */,
+				ABA377072A0913BD00A04185 /* Operation.swift in Sources */,
+				ABAF0B3A2A084D7100019533 /* Coordinator.swift in Sources */,
+				ABA3771E2A091B6E00A04185 /* BankAccountCellViewModel.swift in Sources */,
+				AB4DB2912A095A3F00181E59 /* AccountCoordinator.swift in Sources */,
 				AB6D53C12A0823D0004737A5 /* SimulatorViewModel.swift in Sources */,
 				AB6D53BE2A0823D0004737A5 /* MyAccountsController.swift in Sources */,
+				ABA377222A091B7E00A04185 /* SubAccountCellViewModel.swift in Sources */,
+				ABAF0B362A084B4800019533 /* ApplicationCoordinator.swift in Sources */,
+				ABA377112A0916DA00A04185 /* HttpRequestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,15 +556,28 @@
 			files = (
 				AB6D53B62A0823D0004737A5 /* SettingsController.swift in Sources */,
 				AB6D53B32A0823D0004737A5 /* AccountDetailsViewModel.swift in Sources */,
-				AB6D53BC2A0823D0004737A5 /* MyAccountViewModel.swift in Sources */,
+				ABA377162A09172200A04185 /* BankAccountService.swift in Sources */,
+				ABAF0B3B2A084D7100019533 /* Coordinator.swift in Sources */,
 				AB6D53C22A0823D0004737A5 /* SimulatorViewModel.swift in Sources */,
 				AB6D53B02A0823D0004737A5 /* AccountDetailsController.swift in Sources */,
 				AB6D53BF2A0823D0004737A5 /* MyAccountsController.swift in Sources */,
+				ABA377232A091B7E00A04185 /* SubAccountCellViewModel.swift in Sources */,
 				AB6D53962A08213C004737A5 /* AppDelegate.swift in Sources */,
+				AB4DB2942A09657200181E59 /* OperationCellViewModel.swift in Sources */,
 				AB6D53612A081C9F004737A5 /* BankingAppTests.swift in Sources */,
+				ABA3771B2A091B3900A04185 /* MyAccountsViewModel.swift in Sources */,
+				ABA376EE2A08FE6100A04185 /* BankAccountCell.swift in Sources */,
+				ABA376F62A08FE7200A04185 /* SubAccountCell.swift in Sources */,
 				AB6D53992A08213C004737A5 /* SceneDelegate.swift in Sources */,
 				AB6D53C52A0823D0004737A5 /* SimulatorController.swift in Sources */,
+				ABA3770B2A0913BD00A04185 /* BankAccount.swift in Sources */,
+				ABA377082A0913BD00A04185 /* Operation.swift in Sources */,
+				ABA377122A0916DA00A04185 /* HttpRequestHelper.swift in Sources */,
 				AB6D53B92A0823D0004737A5 /* SettingsViewModel.swift in Sources */,
+				ABAF0B372A084B4800019533 /* ApplicationCoordinator.swift in Sources */,
+				ABA3770E2A0913BD00A04185 /* Account.swift in Sources */,
+				ABA3771F2A091B6E00A04185 /* BankAccountCellViewModel.swift in Sources */,
+				ABA376FF2A09071C00A04185 /* OperationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,16 +586,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB6D53972A08213C004737A5 /* AppDelegate.swift in Sources */,
-				AB6D53BD2A0823D0004737A5 /* MyAccountViewModel.swift in Sources */,
+				ABAF0B382A084B4800019533 /* ApplicationCoordinator.swift in Sources */,
 				AB6D536B2A081C9F004737A5 /* BankingAppUITests.swift in Sources */,
 				AB6D53C02A0823D0004737A5 /* MyAccountsController.swift in Sources */,
+				ABA3770F2A0913BD00A04185 /* Account.swift in Sources */,
+				ABA377092A0913BD00A04185 /* Operation.swift in Sources */,
 				AB6D536D2A081C9F004737A5 /* BankingAppUITestsLaunchTests.swift in Sources */,
+				ABA376F72A08FE7200A04185 /* SubAccountCell.swift in Sources */,
+				ABA377202A091B6E00A04185 /* BankAccountCellViewModel.swift in Sources */,
+				ABAF0B3C2A084D7100019533 /* Coordinator.swift in Sources */,
+				AB4DB2952A09657200181E59 /* OperationCellViewModel.swift in Sources */,
 				AB6D53C32A0823D0004737A5 /* SimulatorViewModel.swift in Sources */,
+				ABA377172A09172200A04185 /* BankAccountService.swift in Sources */,
 				AB6D53B72A0823D0004737A5 /* SettingsController.swift in Sources */,
+				ABA376EF2A08FE6100A04185 /* BankAccountCell.swift in Sources */,
+				ABA377002A09071C00A04185 /* OperationCell.swift in Sources */,
+				ABA3771C2A091B3900A04185 /* MyAccountsViewModel.swift in Sources */,
 				AB6D53B42A0823D0004737A5 /* AccountDetailsViewModel.swift in Sources */,
 				AB6D53C62A0823D0004737A5 /* SimulatorController.swift in Sources */,
+				ABA3770C2A0913BD00A04185 /* BankAccount.swift in Sources */,
+				ABA377242A091B7E00A04185 /* SubAccountCellViewModel.swift in Sources */,
 				AB6D53B12A0823D0004737A5 /* AccountDetailsController.swift in Sources */,
 				AB6D539A2A08213C004737A5 /* SceneDelegate.swift in Sources */,
+				ABA377132A0916DA00A04185 /* HttpRequestHelper.swift in Sources */,
 				AB6D53BA2A0823D0004737A5 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,7 +773,6 @@
 				INFOPLIST_FILE = BankingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -639,7 +802,6 @@
 				INFOPLIST_FILE = BankingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

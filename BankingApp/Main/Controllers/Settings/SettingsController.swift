@@ -7,8 +7,15 @@
 
 import UIKit
 
-class MyAccountsController: UIViewController {
+class SettingsController: UIViewController {
 
+    var viewModel: SettingsViewModel? {
+        willSet {
+        }
+        didSet {
+           
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

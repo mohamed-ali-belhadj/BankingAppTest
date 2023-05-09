@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BankAccountCell" id="KGk-i7-Jjw" customClass="BankAccountCell" customModule="BankingApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BankAccount.title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUT-Ig-6bL">
+                        <rect key="frame" x="20" y="21" width="131.66666666666666" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="FYU-iX-D6r"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1340,50 €" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1F-FI-ncB">
+                        <rect key="frame" x="223" y="23" width="57" height="14.333333333333336"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="5Rt-Ae-cMu"/>
+                            <constraint firstAttribute="height" constant="14.333333333333336" id="d2y-UZ-6ad"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="control" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xQC-vw-ces">
+                        <rect key="frame" x="295" y="24.333333333333332" width="15" height="9.9999999999999964"/>
+                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="89d-tr-BRn"/>
+                            <constraint firstAttribute="height" constant="20.000000000000004" id="TBF-0N-zhq"/>
+                        </constraints>
+                    </imageView>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T3b-dW-O5J" customClass="InnerAutoTableView" customModule="BankingApp" customModuleProvider="target">
+                        <rect key="frame" x="50" y="50" width="270" height="1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="Sfj-tB-o3x"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="XZj-Vj-0Fj"/>
+                        </connections>
+                    </tableView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="T3b-dW-O5J" secondAttribute="bottom" constant="9" id="1Pd-OV-jPB"/>
+                    <constraint firstItem="T3b-dW-O5J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="AJ4-BU-04j"/>
+                    <constraint firstItem="HUT-Ig-6bL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="FzM-b9-W7A"/>
+                    <constraint firstAttribute="trailing" secondItem="W1F-FI-ncB" secondAttribute="trailing" constant="40" id="MBd-bj-uqG"/>
+                    <constraint firstItem="xQC-vw-ces" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="Vu3-sv-QGq"/>
+                    <constraint firstItem="T3b-dW-O5J" firstAttribute="top" secondItem="xQC-vw-ces" secondAttribute="bottom" constant="7" id="YU4-5C-4rq"/>
+                    <constraint firstItem="W1F-FI-ncB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="jOc-dL-9Rw"/>
+                    <constraint firstAttribute="trailing" secondItem="T3b-dW-O5J" secondAttribute="trailing" id="nEj-d4-qSA"/>
+                    <constraint firstItem="HUT-Ig-6bL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="od0-of-Epd"/>
+                    <constraint firstItem="W1F-FI-ncB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HUT-Ig-6bL" secondAttribute="trailing" constant="10" id="qYA-YJ-l9f"/>
+                    <constraint firstAttribute="trailing" secondItem="xQC-vw-ces" secondAttribute="trailing" constant="10" id="sOq-2t-ssK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="accountAmountLabel" destination="W1F-FI-ncB" id="6Df-1h-vOS"/>
+                <outlet property="accountTitleLabel" destination="HUT-Ig-6bL" id="W2U-zZ-Zhs"/>
+                <outlet property="tableView" destination="T3b-dW-O5J" id="MLV-Z0-kvo"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="20.422535211267608"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="control" catalog="system" width="128" height="70"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
