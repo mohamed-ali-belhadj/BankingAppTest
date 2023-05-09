@@ -31,4 +31,4 @@ The project respects the **MVVM-C** architecture with one minor modification.
 
 ## License
 
-Fizz Buzz is under [GPL](https://github.com/Illumina/licenses/blob/master/gpl-3.0.txt)-licensed v3.0.
+Banking app is under [GPL](https://github.com/Illumina/licenses/blob/master/gpl-3.0.txt)-licensed v3.0.
