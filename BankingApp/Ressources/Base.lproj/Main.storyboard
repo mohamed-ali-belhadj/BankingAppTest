@@ -66,6 +66,7 @@
                             <constraint firstItem="EmQ-kP-fMe" firstAttribute="trailing" secondItem="9Zw-vI-y6f" secondAttribute="trailing" id="1fx-2y-x3a"/>
                             <constraint firstItem="EmQ-kP-fMe" firstAttribute="top" secondItem="eJq-g1-dyc" secondAttribute="bottom" constant="8" symbolic="YES" id="BAY-Hy-NgI"/>
                             <constraint firstItem="eJq-g1-dyc" firstAttribute="leading" secondItem="9Zw-vI-y6f" secondAttribute="leading" constant="33" id="Ln1-n4-gjS"/>
+                            <constraint firstItem="9Zw-vI-y6f" firstAttribute="trailing" secondItem="eJq-g1-dyc" secondAttribute="trailing" constant="120" id="Nbq-T0-3wG"/>
                             <constraint firstItem="EmQ-kP-fMe" firstAttribute="leading" secondItem="9Zw-vI-y6f" secondAttribute="leading" id="epe-Gl-utY"/>
                             <constraint firstAttribute="bottom" secondItem="EmQ-kP-fMe" secondAttribute="bottom" id="s0S-Of-9ir"/>
                             <constraint firstItem="eJq-g1-dyc" firstAttribute="top" secondItem="9Zw-vI-y6f" secondAttribute="top" constant="30" id="xfv-Xg-uSg"/>
@@ -126,6 +127,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="DZH-5N-DjP">
+                                <rect key="frame" x="59" y="404" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TyO-5S-qV6">
                                 <rect key="frame" x="0.0" y="248" width="393" height="604"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

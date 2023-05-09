@@ -11,6 +11,9 @@
 		AB4DB2932A09657200181E59 /* OperationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4DB2922A09657200181E59 /* OperationCellViewModel.swift */; };
 		AB4DB2942A09657200181E59 /* OperationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4DB2922A09657200181E59 /* OperationCellViewModel.swift */; };
 		AB4DB2952A09657200181E59 /* OperationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4DB2922A09657200181E59 /* OperationCellViewModel.swift */; };
+		AB69D8212A0A718D00276063 /* InnerAutoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69D8202A0A718D00276063 /* InnerAutoTableView.swift */; };
+		AB69D8222A0A718D00276063 /* InnerAutoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69D8202A0A718D00276063 /* InnerAutoTableView.swift */; };
+		AB69D8232A0A718D00276063 /* InnerAutoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69D8202A0A718D00276063 /* InnerAutoTableView.swift */; };
 		AB6D53612A081C9F004737A5 /* BankingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53602A081C9F004737A5 /* BankingAppTests.swift */; };
 		AB6D536B2A081C9F004737A5 /* BankingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D536A2A081C9F004737A5 /* BankingAppUITests.swift */; };
 		AB6D536D2A081C9F004737A5 /* BankingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D536C2A081C9F004737A5 /* BankingAppUITestsLaunchTests.swift */; };
@@ -120,6 +123,7 @@
 /* Begin PBXFileReference section */
 		AB4DB2902A095A3F00181E59 /* AccountCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
 		AB4DB2922A09657200181E59 /* OperationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCellViewModel.swift; sourceTree = "<group>"; };
+		AB69D8202A0A718D00276063 /* InnerAutoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerAutoTableView.swift; sourceTree = "<group>"; };
 		AB6D53462A081C9C004737A5 /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6D53572A081C9F004737A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB6D535C2A081C9F004737A5 /* BankingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA377102A0916DA00A04185 /* HttpRequestHelper.swift */,
+				AB69D8202A0A718D00276063 /* InnerAutoTableView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -537,6 +542,7 @@
 				AB6D53B82A0823D0004737A5 /* SettingsViewModel.swift in Sources */,
 				ABA376ED2A08FE6100A04185 /* BankAccountCell.swift in Sources */,
 				ABA3771A2A091B3900A04185 /* MyAccountsViewModel.swift in Sources */,
+				AB69D8212A0A718D00276063 /* InnerAutoTableView.swift in Sources */,
 				ABA377152A09172200A04185 /* BankAccountService.swift in Sources */,
 				ABA377072A0913BD00A04185 /* Operation.swift in Sources */,
 				ABAF0B3A2A084D7100019533 /* Coordinator.swift in Sources */,
@@ -568,6 +574,7 @@
 				ABA3771B2A091B3900A04185 /* MyAccountsViewModel.swift in Sources */,
 				ABA376EE2A08FE6100A04185 /* BankAccountCell.swift in Sources */,
 				ABA376F62A08FE7200A04185 /* SubAccountCell.swift in Sources */,
+				AB69D8222A0A718D00276063 /* InnerAutoTableView.swift in Sources */,
 				AB6D53992A08213C004737A5 /* SceneDelegate.swift in Sources */,
 				AB6D53C52A0823D0004737A5 /* SimulatorController.swift in Sources */,
 				ABA3770B2A0913BD00A04185 /* BankAccount.swift in Sources */,
@@ -594,6 +601,7 @@
 				AB6D536D2A081C9F004737A5 /* BankingAppUITestsLaunchTests.swift in Sources */,
 				ABA376F72A08FE7200A04185 /* SubAccountCell.swift in Sources */,
 				ABA377202A091B6E00A04185 /* BankAccountCellViewModel.swift in Sources */,
+				AB69D8232A0A718D00276063 /* InnerAutoTableView.swift in Sources */,
 				ABAF0B3C2A084D7100019533 /* Coordinator.swift in Sources */,
 				AB4DB2952A09657200181E59 /* OperationCellViewModel.swift in Sources */,
 				AB6D53C32A0823D0004737A5 /* SimulatorViewModel.swift in Sources */,

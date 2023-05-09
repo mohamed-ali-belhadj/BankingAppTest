@@ -9,7 +9,14 @@ import UIKit
 
 class MyAccountsController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView?
+    @IBOutlet weak var tableView: InnerAutoTableView?
+    lazy var indicatorView: UIActivityIndicatorView = {
+      let view = UIActivityIndicatorView(style: .large)
+      view.color = .gray
+      view.startAnimating()
+      view.translatesAutoresizingMaskIntoConstraints = false
+      return view
+    }()
     lazy var viewModel = {
         MyAccountsViewModel()
     }()
@@ -17,65 +24,92 @@ class MyAccountsController: UIViewController {
         super.viewDidLoad()
         self.title = "Mes comptes"
         self.tableView?.register(BankAccountCell.nib, forCellReuseIdentifier: BankAccountCell.identifier)
-        initViewModel()
+        self.initViewModel()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     func initViewModel() {
-        // Get employees data
+        self.showActivityIndicator()
         viewModel.getBankAccounts()
-        
-        // Reload TableView closure
         viewModel.reloadTableView = { [weak self] in
             DispatchQueue.main.async {
+                self?.hideActivityIndicator()
                 self?.tableView?.reloadData()
             }
         }
     }
-    
 }
 extension MyAccountsController : UITableViewDelegate,UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.bankAccountsCellViewModels.count
-    }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+        if section == 0
+        {
+            return self.viewModel.CABankAccountsViewModels.count
+        }
+        else
+        {
+            return self.viewModel.othersBankAccountsViewModels.count
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        if self.viewModel.currentIndexsCollapsed.contains(indexPath)
+        {
+            return 60.0 + (CGFloat(viewModel.getCellViewModel(at: indexPath).subAccountsCellViewModels.count) * 60.0)
+        }
+        else
+        {
+            return 60.0
+        }
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Crédit agricole"
+        switch section {
+        case 0:
+            return "Crédit Agricole"
+        default:
+            return "Autres Banques"
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BankAccountCell.identifier, for: indexPath) as! BankAccountCell
-        let cellViewModel = viewModel.getCellViewModel(at: indexPath)
+        var cellViewModel = viewModel.getCellViewModel(at: indexPath)
+        cellViewModel.isCollapsed = self.viewModel.currentIndexsCollapsed.contains(indexPath)
         cell.cellViewModel = cellViewModel
         cell.navc = self.navigationController
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var isCollapsed =  false
-        if self.viewModel.currentIndexCollapsed != indexPath.row
+        if !self.viewModel.currentIndexsCollapsed.contains(indexPath)
         {
-            self.viewModel.currentIndexCollapsed = indexPath.row
-            isCollapsed = true
+            self.viewModel.currentIndexsCollapsed.append(indexPath)
         }
         else
         {
-            self.viewModel.currentIndexCollapsed = -1
+            if let index = self.viewModel.currentIndexsCollapsed.firstIndex(of: indexPath) {
+                self.viewModel.currentIndexsCollapsed.remove(at: index)
+            }
         }
-        self.viewModel.updateCollapseValueForCellViewModel(at: indexPath, isCollapsed: isCollapsed)
         DispatchQueue.main.async {
-            self.tableView?.reloadData()
+            self.tableView?.reloadRows(at: [indexPath], with: .automatic)
         }
     }
 }
 
-
+extension MyAccountsController
+{
+    func showActivityIndicator() {
+        self.view.addSubview(self.indicatorView)
+        NSLayoutConstraint.activate([
+            self.indicatorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.indicatorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+          ])
+    }
+    func hideActivityIndicator() {
+        self.indicatorView.stopAnimating()
+        self.indicatorView.removeFromSuperview()
+    }
+}

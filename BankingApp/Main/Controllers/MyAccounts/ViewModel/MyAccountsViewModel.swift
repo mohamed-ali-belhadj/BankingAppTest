@@ -10,16 +10,13 @@ import Foundation
 final class MyAccountsViewModel {
     
     private var bankAccountService: BankAccountServiceProtocol
-    var currentIndexCollapsed : Int = -1
+    var currentIndexsCollapsed : [IndexPath] = [IndexPath]()
     var reloadTableView: (() -> Void)?
     
     var bankAccounts = [BankAccount]()
-    var bankAccountsCellViewModels = [BankAccountCellViewModel]() {
-        didSet {
-            reloadTableView?()
-        }
-    }
-    
+    var CABankAccountsViewModels = [BankAccountCellViewModel]()
+    var othersBankAccountsViewModels = [BankAccountCellViewModel]()
+
     init(bankAccountService: BankAccountService = BankAccountService()) {
         self.bankAccountService = bankAccountService
     }
@@ -35,7 +32,6 @@ final class MyAccountsViewModel {
     }
     func fetchData(bankAccounts: [BankAccount]) {
         self.bankAccounts = bankAccounts // Cache
-        var bankAccountCellViewModels = [BankAccountCellViewModel]()
         for bankAccount in bankAccounts {
             var bankAccountVm = createCellModel(bankAccount: bankAccount)
             if let accounts = bankAccount.accounts
@@ -43,10 +39,29 @@ final class MyAccountsViewModel {
                 for account in accounts {
                     bankAccountVm.subAccountsCellViewModels.append(bankAccountVm.createCellModel(subAccount: account))
                 }
+                bankAccountVm.subAccountsCellViewModels = bankAccountVm.subAccountsCellViewModels .sorted { $0.accountTitle.localizedCaseInsensitiveCompare($1.accountTitle) == .orderedAscending }
             }
-            bankAccountCellViewModels.append(bankAccountVm)
+            if let isCA = bankAccount.isCA
+            {
+                if isCA == 1
+                {
+                    self.CABankAccountsViewModels.append(bankAccountVm)
+                }
+                else
+                {
+                    self.othersBankAccountsViewModels.append(bankAccountVm)
+                }
+            }
+            else
+            {
+                self.othersBankAccountsViewModels.append(bankAccountVm)
+            }
+            
         }
-        self.bankAccountsCellViewModels = bankAccountCellViewModels
+        self.CABankAccountsViewModels = self.CABankAccountsViewModels.sorted { $0.bankAccountTitle.localizedCaseInsensitiveCompare($1.bankAccountTitle) == .orderedAscending }
+        self.othersBankAccountsViewModels = self.othersBankAccountsViewModels.sorted { $0.bankAccountTitle.localizedCaseInsensitiveCompare($1.bankAccountTitle) == .orderedAscending }
+
+        self.reloadTableView?()
     }
     
     func createCellModel(bankAccount: BankAccount) -> BankAccountCellViewModel {
@@ -56,10 +71,15 @@ final class MyAccountsViewModel {
     }
     
     func getCellViewModel(at indexPath: IndexPath) -> BankAccountCellViewModel {
-        return self.bankAccountsCellViewModels[indexPath.row]
+        if indexPath.section == 0
+        {
+            return self.CABankAccountsViewModels[indexPath.row]
+        }
+        else
+        {
+            return self.othersBankAccountsViewModels[indexPath.row]
+        }
     }
-    func updateCollapseValueForCellViewModel(at indexPath: IndexPath,isCollapsed:Bool) {
-        self.bankAccountsCellViewModels[indexPath.row].isCollapsed = isCollapsed
-    }
+    
     
 }

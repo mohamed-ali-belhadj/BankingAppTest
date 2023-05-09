@@ -21,9 +21,7 @@ final class AccountDetailsViewModel {
             operationsCellViewModels.append(operationVm)
         }
         operationsCellViewModels.sort(by: { $0.operationDate?.compare($1.operationDate ?? Date()) == .orderedDescending })
-        var operationsDateEqual = operationsCellViewModels.filterDuplicates { $0.operationDateString == $1.operationDateString}
-        operationsDateEqual = operationsDateEqual.sorted { $0.operationTitle.localizedCaseInsensitiveCompare($1.operationTitle) == .orderedAscending }
-        self.operationsCellViewModels = operationsDateEqual
+        self.operationsCellViewModels = self.filterDuplicates(operations: operationsCellViewModels)
     }
     func createCellModel(operation: Operation?) -> OperationCellViewModel {
         let operationDate = self.getOperationDate(operationDate: (operation?.date) ?? "")
@@ -43,24 +41,32 @@ final class AccountDetailsViewModel {
         dateFormatter.dateFormat = "dd/MM/YYYY"
         return dateFormatter.string(from: opDate)
     }
-}
-
-extension Array {
-
-    func filterDuplicates(includeElement: @escaping (_ lhs: Element, _ rhs: Element) -> Bool) -> [Element] {
-
-        var results = [Element]()
-
-        forEach { (element) in
-
-            let existingElements = results.filter {
-                return includeElement(element, $0)
-            }
-
-            if existingElements.count == 0 {
-                results.append(element)
+    func filterDuplicates(operations: [OperationCellViewModel])->[OperationCellViewModel]
+    {
+        var operationsDuplicated : [OperationCellViewModel] = [OperationCellViewModel]()
+        var operationsResult : [OperationCellViewModel] = operations
+        var firstRang : Int? = -1
+        for operation in operations {
+            operationsDuplicated.removeAll()
+            firstRang = -1
+            for op in operations {
+                if op.operationDateString == operation.operationDateString
+                {
+                    operationsDuplicated.append(op)
+                    if firstRang == -1
+                    {
+                        firstRang = operations.firstIndex{$0.operationDateString == op.operationDateString}
+                    }
+                }
+                operationsDuplicated = operationsDuplicated.sorted { $0.operationTitle.localizedCaseInsensitiveCompare($1.operationTitle) == .orderedAscending }
+                guard let rang = firstRang else { return operationsResult }
+                if rang != -1
+                {
+                    operationsResult[rang...rang + operationsDuplicated.count-1] = operationsDuplicated[0...operationsDuplicated.count-1]
+                }
             }
         }
-        return results
+        return operationsResult
     }
 }
+

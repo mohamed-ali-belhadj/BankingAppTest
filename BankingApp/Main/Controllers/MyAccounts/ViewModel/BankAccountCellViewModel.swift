@@ -11,6 +11,8 @@ struct BankAccountCellViewModel {
     var bankAccountAmount: String
     var bankAccountModel : BankAccount
     var subAccountsCellViewModels = [SubAccountCellViewModel]()
+    var reloadTableView: (() -> Void)?
+
     var isCollapsed : Bool = false
     
     func createCellModel(subAccount: Account) -> SubAccountCellViewModel {
