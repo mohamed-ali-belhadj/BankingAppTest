@@ -7,18 +7,18 @@
 import Foundation
 
 // MARK: - Account
-public struct Account: Codable {
-    public var balance: Double?
-    public var contractNumber: String?
-    public var holder: String?
-    public var id: String?
-    public var label: String?
-    public var operations: [Operation]?
-    public var order: Int?
-    public var productCode: String?
-    public var role: Int?
+struct Account: Codable {
+    var balance: Double?
+    var contractNumber: String?
+    var holder: String?
+    var id: String?
+    var label: String?
+    var operations: [Operation]?
+    var order: Int?
+    var productCode: String?
+    var role: Int?
 
-    public init(balance: Double?, contractNumber: String?, holder: String?, id: String?, label: String?, operations: [Operation]?, order: Int?, productCode: String?, role: Int?) {
+    init(balance: Double?, contractNumber: String?, holder: String?, id: String?, label: String?, operations: [Operation]?, order: Int?, productCode: String?, role: Int?) {
         self.balance = balance
         self.contractNumber = contractNumber
         self.holder = holder

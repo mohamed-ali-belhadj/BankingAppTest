@@ -7,12 +7,12 @@
 import Foundation
 
 // MARK: - BankAccount
-public struct BankAccount:Codable {
-    public var accounts: [Account]?
-    public var isCA: Int?
-    public var name: String?
+struct BankAccount:Codable {
+    var accounts: [Account]?
+    var isCA: Int?
+    var name: String?
 
-    public init(accounts: [Account]?, isCA: Int?, name: String?) {
+    init(accounts: [Account]?, isCA: Int?, name: String?) {
         self.accounts = accounts
         self.isCA = isCA
         self.name = name

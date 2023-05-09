@@ -7,14 +7,14 @@
 import Foundation
 
 // MARK: - Operation
-public struct Operation: Codable  {
-    public var amount: String?
-    public var category: String?
-    public var date: String?
-    public var id: String?
-    public var title: String?
+struct Operation: Codable  {
+    var amount: String?
+    var category: String?
+    var date: String?
+    var id: String?
+    var title: String?
 
-    public init(amount: String?, category: String?, date: String?, id: String?, title: String?) {
+    init(amount: String?, category: String?, date: String?, id: String?, title: String?) {
         self.amount = amount
         self.category = category
         self.date = date
