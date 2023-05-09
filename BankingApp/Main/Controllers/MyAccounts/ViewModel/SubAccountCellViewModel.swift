@@ -10,4 +10,5 @@ struct SubAccountCellViewModel {
     var accountTitle: String
     var accountAmount: String
     var accountModel : Account
+
 }

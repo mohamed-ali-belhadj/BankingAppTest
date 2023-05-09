@@ -20,6 +20,7 @@ class AccountDetailsController: UIViewController {
         setupUI()
         fillData()
     }
+    // MARK: Private methods
     private func setupUI()
     {
         navigationController?.setNavigationBarHidden(false, animated: true)

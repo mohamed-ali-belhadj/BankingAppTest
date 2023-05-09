@@ -11,11 +11,11 @@ class MyAccountsController: UIViewController {
 
     @IBOutlet var tableView: InnerAutoTableView!
     var indicatorView: UIActivityIndicatorView = {
-      let view = UIActivityIndicatorView(style: .large)
-      view.color = .gray
-      view.startAnimating()
-      view.translatesAutoresizingMaskIntoConstraints = false
-      return view
+      let indicatorView = UIActivityIndicatorView(style: .large)
+        indicatorView.color = .gray
+        indicatorView.startAnimating()
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
+      return indicatorView
     }()
     var viewModel = MyAccountsViewModel()
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ class MyAccountsController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    // MARK: Private methods
     private func setupUI()
     {
         title = "Mes comptes"
@@ -80,7 +81,7 @@ extension MyAccountsController : UITableViewDelegate,UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: BankAccountCell.identifier, for: indexPath) as! BankAccountCell
-        var cellViewModel = viewModel.getCellViewModel(at: indexPath)
+        var cellViewModel = viewModel.getCellViewModel(at: indexPath.row, type: AccountTypeEnum(fromRawValue: indexPath.section))
         cellViewModel.isCollapsed.toggle()
         cell.cellViewModel = cellViewModel
         cell.tableView?.reloadData()
