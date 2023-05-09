@@ -71,6 +71,7 @@
             <connections>
                 <outlet property="accountAmountLabel" destination="W1F-FI-ncB" id="6Df-1h-vOS"/>
                 <outlet property="accountTitleLabel" destination="HUT-Ig-6bL" id="W2U-zZ-Zhs"/>
+                <outlet property="arrowImageView" destination="xQC-vw-ces" id="ozd-zX-gT7"/>
                 <outlet property="tableView" destination="T3b-dW-O5J" id="MLV-Z0-kvo"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="20.422535211267608"/>

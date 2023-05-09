@@ -11,6 +11,7 @@ class BankAccountCell: UITableViewCell {
 
     @IBOutlet weak var accountTitleLabel: UILabel?
     @IBOutlet weak var accountAmountLabel: UILabel?
+    @IBOutlet weak var arrowImageView: UIImageView?
     @IBOutlet weak var tableView: InnerAutoTableView?
     static var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
     static var identifier: String { return String(describing: self) }
@@ -20,7 +21,17 @@ class BankAccountCell: UITableViewCell {
         didSet {
             self.accountTitleLabel?.text = self.cellViewModel?.bankAccountTitle
             self.accountAmountLabel?.text = self.cellViewModel?.bankAccountAmount
+            
             DispatchQueue.main.async {
+                self.arrowImageView?.transform = CGAffineTransform.identity
+                if self.cellViewModel?.isCollapsed == true
+                {
+                    self.arrowImageView?.transform = self.arrowImageView?.transform.rotated(by: .pi * 2) ?? CGAffineTransform.identity
+                }
+                else
+                {
+                    self.arrowImageView?.transform = self.arrowImageView?.transform.rotated(by: -.pi) ?? CGAffineTransform.identity
+                }
                 self.tableView?.reloadData()
             }
         }
