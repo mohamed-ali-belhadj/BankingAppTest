@@ -10,20 +10,6 @@ import XCTest
 
 final class BankAccountViewModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    override class func setUp() {
-        
-    }
-    override class func tearDown() {
-        
-    }
     func testCreateBankAccountCellModel()
     {
         let bankAccountViewModel = BankAccountCellViewModel(bankAccountTitle: "Compte de dépôt", bankAccountAmount: "30.0", bankAccountModel: BankAccount(accounts: [Account(balance: 30.0,label: "Compte de dépôt")], isCA: 1, name: "CA 1"))
@@ -41,12 +27,6 @@ final class BankAccountViewModelTests: XCTestCase {
         let CABankAccountsViewModel = accountsViewModel.CABankAccountsViewModels.first
         let subAccountViewModel = CABankAccountsViewModel?.getCellViewModel(at: IndexPath(row: 0, section: 0))
         XCTAssert(subAccountViewModel?.accountTitle == "Compte de dépôt" , "the two fields are not identical")
-    }
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

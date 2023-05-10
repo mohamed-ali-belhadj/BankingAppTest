@@ -10,20 +10,6 @@ import XCTest
 
 final class AccountDetailsViewModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    override class func setUp() {
-        
-    }
-    override class func tearDown() {
-        
-    }
     func testFetchOperations()
     {
         let accountDetailViewModel = AccountDetailsViewModel(account: Account(balance: 20.0,label: "Compte joint",operations: [Operation(amount: "30.0", category: "leisure", date: "1644438769", id: "2", title: "Orange"),Operation(amount: "20.0", category: "costs", date: "1588690878", id: "2", title: "Tenue de compte")]))
@@ -62,12 +48,6 @@ final class AccountDetailsViewModelTests: XCTestCase {
         let date = accountDetailViewModel.getOperationDate(operationDate:"1588690878")
         let dateString = accountDetailViewModel.getOperationDateString(operationDate: date)
         XCTAssertNotNil(dateString,"Problem to convert operation date and get date string")
-    }
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

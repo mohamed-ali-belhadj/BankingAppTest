@@ -8,7 +8,13 @@ enum HTTPHeaderFields {
 }
 
 class HttpRequestHelper {
-    func GET(url: String, params: [String: String], httpHeader: HTTPHeaderFields, complete: @escaping (Bool, Data?) -> ()) {
+    func GET<T: Codable>(url: String, params: [String: String], httpHeader: HTTPHeaderFields, type: T.Type, mockFilePath: String, complete: @escaping (Bool, T?) -> ()) {
+        
+        guard AppConstants.environment == .prod else {
+            complete(true, getMock(fromFile: mockFilePath, type: T.self))
+            return
+        }
+        
         guard var components = URLComponents(string: url) else {
             print("Error: cannot create URLCompontents")
             return
@@ -53,7 +59,27 @@ class HttpRequestHelper {
                 complete(false, nil)
                 return
             }
-            complete(true, data)
+            do{
+                let model = try JSONDecoder().decode(T.self, from: data)
+                complete(true, model)
+            }catch{
+                complete(false, nil)
+            }
+            
         }.resume()
     }
+    
+    func getMock<T: Codable>(fromFile: String, type: T.Type) -> T?{
+        guard let path = Bundle.main.url(forResource: fromFile, withExtension: "json") else {
+            return nil
+        }
+        do {
+            let data = try Data(contentsOf: path)
+            let result = try JSONDecoder().decode(T.self, from: data)
+            return result
+        } catch {
+            return nil
+        }
+    }
+
 }

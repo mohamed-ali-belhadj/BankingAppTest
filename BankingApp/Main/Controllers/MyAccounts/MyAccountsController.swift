@@ -45,6 +45,9 @@ class MyAccountsController: UIViewController {
             }
             else
             {
+                DispatchQueue.main.async {
+                    self?.hideActivityIndicator()
+                }
                 if let errorString = error
                 {
                     print(errorString)

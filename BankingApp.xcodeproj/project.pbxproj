@@ -30,6 +30,9 @@
 		AB69D8362A0B93A100276063 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69D8332A0B93A100276063 /* AppConstants.swift */; };
 		AB69D8392A0B9DBF00276063 /* BankAccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69D8372A0B9DBF00276063 /* BankAccountViewModelTests.swift */; };
 		AB69D83C2A0BA1E200276063 /* AccountDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB69D83B2A0BA1E200276063 /* AccountDetailsViewModelTests.swift */; };
+		AB69D83E2A0BCF4C00276063 /* bank_account_mock_file.json in Resources */ = {isa = PBXBuildFile; fileRef = AB69D83D2A0BCF4C00276063 /* bank_account_mock_file.json */; };
+		AB69D83F2A0BCF4C00276063 /* bank_account_mock_file.json in Resources */ = {isa = PBXBuildFile; fileRef = AB69D83D2A0BCF4C00276063 /* bank_account_mock_file.json */; };
+		AB69D8402A0BCF4C00276063 /* bank_account_mock_file.json in Resources */ = {isa = PBXBuildFile; fileRef = AB69D83D2A0BCF4C00276063 /* bank_account_mock_file.json */; };
 		AB6D53612A081C9F004737A5 /* MyAccountsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D53602A081C9F004737A5 /* MyAccountsViewModelTests.swift */; };
 		AB6D536B2A081C9F004737A5 /* BankingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D536A2A081C9F004737A5 /* BankingAppUITests.swift */; };
 		AB6D536D2A081C9F004737A5 /* BankingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6D536C2A081C9F004737A5 /* BankingAppUITestsLaunchTests.swift */; };
@@ -146,6 +149,7 @@
 		AB69D8332A0B93A100276063 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		AB69D8372A0B9DBF00276063 /* BankAccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountViewModelTests.swift; sourceTree = "<group>"; };
 		AB69D83B2A0BA1E200276063 /* AccountDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		AB69D83D2A0BCF4C00276063 /* bank_account_mock_file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bank_account_mock_file.json; sourceTree = "<group>"; };
 		AB6D53462A081C9C004737A5 /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6D53572A081C9F004737A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB6D535C2A081C9F004737A5 /* BankingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,6 +314,7 @@
 		AB6D537C2A08213B004737A5 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				AB69D83D2A0BCF4C00276063 /* bank_account_mock_file.json */,
 				AB6D537D2A08213B004737A5 /* Assets.xcassets */,
 				AB6D537E2A08213B004737A5 /* LaunchScreen.storyboard */,
 				AB6D53802A08213B004737A5 /* Main.storyboard */,
@@ -527,6 +532,7 @@
 				AB6D538C2A08213C004737A5 /* Assets.xcassets in Resources */,
 				ABA376F82A08FE7200A04185 /* SubAccountCell.xib in Resources */,
 				AB6D538F2A08213C004737A5 /* LaunchScreen.storyboard in Resources */,
+				AB69D83E2A0BCF4C00276063 /* bank_account_mock_file.json in Resources */,
 				ABA377012A09071C00A04185 /* OperationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +546,7 @@
 				AB6D538D2A08213C004737A5 /* Assets.xcassets in Resources */,
 				ABA376F92A08FE7200A04185 /* SubAccountCell.xib in Resources */,
 				AB6D53902A08213C004737A5 /* LaunchScreen.storyboard in Resources */,
+				AB69D83F2A0BCF4C00276063 /* bank_account_mock_file.json in Resources */,
 				ABA377022A09071C00A04185 /* OperationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +560,7 @@
 				AB6D538E2A08213C004737A5 /* Assets.xcassets in Resources */,
 				ABA376FA2A08FE7200A04185 /* SubAccountCell.xib in Resources */,
 				AB6D53912A08213C004737A5 /* LaunchScreen.storyboard in Resources */,
+				AB69D8402A0BCF4C00276063 /* bank_account_mock_file.json in Resources */,
 				ABA377032A09071C00A04185 /* OperationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

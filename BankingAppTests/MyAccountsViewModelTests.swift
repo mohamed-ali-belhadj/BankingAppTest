@@ -10,20 +10,6 @@ import XCTest
 
 final class MyAccountsViewModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    override class func setUp() {
-        
-    }
-    override class func tearDown() {
-        
-    }
     func testGetBankAcountsApi() {
         XCTAssert(AppConstants.Link.bankAccountLink == "https://cdf-test-mobile-default-rtdb.europe-west1.firebasedatabase.app/banks.json", "bank account link is wrong")
         let getBankAcountsApiExpection = expectation(description: "BankAcountsApiExpection")
@@ -66,12 +52,6 @@ final class MyAccountsViewModelTests: XCTestCase {
         XCTAssert(cellViewModelCA.bankAccountTitle == "CA 1", "get equivalents accounts for CA does not work well")
         let cellViewModelOthersBanks = accountsViewModel.getCellViewModel(at: 0, type: .Other)
         XCTAssert(cellViewModelOthersBanks.bankAccountTitle == "Banque pop", "get equivalents accounts for others banks does not work well")
-    }
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

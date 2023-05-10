@@ -12,14 +12,9 @@ protocol BankAccountServiceProtocol {
 
 final class BankAccountService: BankAccountServiceProtocol {
     func getBankAccounts(completion: @escaping (Bool, [BankAccount]?, String?) -> ()) {
-        HttpRequestHelper().GET(url: AppConstants.Link.bankAccountLink, params: ["": ""], httpHeader: .application_json) { success, data in
+        HttpRequestHelper().GET(url: AppConstants.Link.bankAccountLink, params: ["": ""], httpHeader: .application_json, type: [BankAccount].self, mockFilePath: AppConstants.Mock.bankAccountMockFile) { success, data in
             if success {
-                do {
-                    let model = try JSONDecoder().decode([BankAccount].self, from: data!)
-                    completion(true, model, nil)
-                } catch {
-                    completion(false, nil, "Error: Trying to parse BankAccounts to model")
-                }
+                    completion(true, data, nil)
             } else {
                 completion(false, nil, "Error: BankAccounts GET Request failed")
             }

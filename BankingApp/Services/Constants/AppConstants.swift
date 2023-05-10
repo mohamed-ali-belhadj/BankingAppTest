@@ -11,4 +11,13 @@ struct AppConstants {
         static let bankAccountLink = "https://cdf-test-mobile-default-rtdb.europe-west1.firebasedatabase.app/banks.json"
 
     }
+    static let environment: AppEnvironment = .mock
+    
+    struct Mock {
+        static let bankAccountMockFile = "bank_account_mock_file"
+    }
+}
+
+enum AppEnvironment {
+    case mock, prod
 }
