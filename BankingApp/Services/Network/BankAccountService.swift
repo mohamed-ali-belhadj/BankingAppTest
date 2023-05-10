@@ -12,7 +12,7 @@ protocol BankAccountServiceProtocol {
 
 final class BankAccountService: BankAccountServiceProtocol {
     func getBankAccounts(completion: @escaping (Bool, [BankAccount]?, String?) -> ()) {
-        HttpRequestHelper().GET(url: "https://cdf-test-mobile-default-rtdb.europe-west1.firebasedatabase.app/banks.json", params: ["": ""], httpHeader: .application_json) { success, data in
+        HttpRequestHelper().GET(url: AppConstants.Link.bankAccountLink, params: ["": ""], httpHeader: .application_json) { success, data in
             if success {
                 do {
                     let model = try JSONDecoder().decode([BankAccount].self, from: data!)

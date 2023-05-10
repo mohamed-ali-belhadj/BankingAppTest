@@ -57,15 +57,21 @@ final class MyAccountsViewModel{
     /// - Returns  Bank account view model
     func createCellModel(bankAccount: BankAccount) -> BankAccountCellViewModel {
         let bankAccountTitle = bankAccount.name
-        let sumAmount : Double = bankAccount.accounts?.compactMap({$0.balance}).reduce(0.0, +) ?? 0.0
+        let sumAmount : Double = getSumAmount(bankAccount: bankAccount)
         var cellViewModel = BankAccountCellViewModel(bankAccountTitle:bankAccountTitle ?? "" , bankAccountAmount: String(format: "%.2f €", sumAmount), bankAccountModel: bankAccount)
         cellViewModel.coordinatorDelegate = self
         return cellViewModel
     }
-    /// Get bank account cell model at index
+    /// Calculate sum amount for an account
     /// - Parameter index: row
     /// - Parameter type: section type : credit agricole or others
     /// - Returns  Bank account view model
+    func getSumAmount(bankAccount: BankAccount) -> Double {
+        return bankAccount.accounts?.compactMap({$0.balance}).reduce(0.0, +) ?? 0.0
+    }
+    /// Get bank account cell model at index
+    /// - Parameter bankAccount: bank acount object
+    /// - Returns  sum as double
     func getCellViewModel(at index: Int, type: AccountTypeEnum) -> BankAccountCellViewModel {
            switch type {
            case .CA:
