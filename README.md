@@ -24,6 +24,7 @@ Banking App Application Core is build to the application, plus some variations t
 * Moderately Documented. 
 * UnitTests to core methods.
 * Absolutly Zero depending on 3rd party packages.
+* Display data as mock data if API link is not yet available.
 
 
 ## Project Architecture
